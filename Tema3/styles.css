@@ -1,0 +1,63 @@
+body {
+	box-sizing: border-box;
+}
+.images {
+	display: flex;
+	justify-content: space-around;
+	height: 55vh;
+	margin-top: 25px;
+}
+.titluri {
+	display: flex;
+	justify-content: space-around;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.8em;
+	margin-top: 40px;
+}
+.raitings {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.3em;
+	font-weight: 100;
+	color: #bbb;
+}
+.descriere {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.3em;
+
+	color: #bbb;
+}
+.paragraf {
+	width: 400px;
+	text-align: center;
+}
+.button {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 30px;
+}
+.button button {
+	width: 110px;
+	height: 50px;
+}
+button.cart {
+	margin-right: 10px;
+	background-color: #111;
+	color: white;
+	font-size: 1em;
+	font-weight: 900;
+}
+button.view {
+	margin-right: 10px;
+	background-color: #fff;
+	color: #111;
+	font-size: 1em;
+	font-weight: 900;
+	border: 3px solid #111;
+}
