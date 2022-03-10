@@ -1,0 +1,94 @@
+body {
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+header {
+	height: 200px;
+	width: 100%;
+	background-color: #eee;
+	display: flex;
+	align-items: center;
+}
+.text1 {
+	font-size: 4em;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 250px;
+	padding: 25px;
+}
+.text2 {
+	font-size: 2.5em;
+	color: #aaa;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 25px;
+	margin-top: 20px;
+}
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: space-around;
+	background-color: #eee;
+	margin-top: 30px;
+	width: 900px;
+	border-radius: 5px;
+}
+main {
+	display: flex;
+	justify-content: space-between;
+}
+form {
+	padding: 10px;
+	line-height: 2em;
+	color: black;
+	font-size: 1em;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	/* background-color: red; */
+}
+form input {
+	width: 400px;
+	height: 30px;
+	color: #aaa;
+	font-family: Arial, Helvetica, sans-serif;
+}
+form textarea {
+	width: 400px;
+	height: 180px;
+	color: #aaa;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+	background-color: rgb(26, 115, 232);
+	color: #fff;
+	height: 40px;
+	width: 130px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	margin-left: 760px;
+}
+button:hover {
+	cursor: pointer;
+	background-color: rgb(54, 65, 223);
+}
+.baraSubMain {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.7em;
+	padding: 5px;
+	margin-top: 15px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #eee;
+}
+.socialMedia a {
+	color: rgb(26, 115, 232);
+	text-decoration: none;
+	padding: 60px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+a:visited {
+	color: rgb(26, 115, 232);
+}
