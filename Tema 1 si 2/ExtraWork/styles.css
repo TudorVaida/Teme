@@ -4,6 +4,9 @@ ul {
 	padding: 30px;
 	line-height: 30px;
 }
+a:hover {
+	color: blue;
+}
 li a {
 	display: block;
 	text-decoration: none;
