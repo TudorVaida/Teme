@@ -1,0 +1,258 @@
+body {
+	background-color: #222;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.content {
+	background-color: #fff;
+	height: 100%;
+	width: 960px;
+}
+nav {
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	border: none;
+}
+nav > button {
+	width: 175px;
+	height: 70px;
+	background-color: rgb(35, 116, 225);
+	color: #fff;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1.5em;
+	border: none;
+}
+nav > button:hover {
+	cursor: pointer;
+	background-color: rgba(35, 116, 225, 80%);
+}
+.title {
+	height: 80px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.titlu {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 2.5em;
+	padding: 20px;
+	border-right: 1px solid black;
+}
+.add {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1em;
+	flex: 1;
+	padding: 20px;
+}
+.contacts {
+	width: 160px;
+	margin-right: 10px;
+}
+.container {
+	width: 960px;
+	height: 580px;
+}
+
+.tag {
+	position: absolute;
+	height: 200px;
+	width: 350px;
+	background-color: rgb(35, 116, 225);
+	z-index: 1000;
+	margin-left: 70px;
+	margin-top: 40px;
+	color: #fff;
+	padding: 10px;
+}
+.tag2 {
+	position: absolute;
+	height: 100px;
+	width: 600px;
+	background-color: rgb(35, 116, 225);
+	z-index: 1000;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 210px;
+	margin-top: 340px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 3.8em;
+}
+img {
+	height: 500px;
+	width: 900px;
+	position: relative;
+	margin-left: 30px;
+}
+.mare {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1.4em;
+	border-bottom: 1px dashed white;
+	padding: 10px;
+}
+.mic {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1.2em;
+	padding: 10px;
+}
+.articles {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px dashed #ccc;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.articles > div {
+	background-color: #ddd;
+	height: 330px;
+	width: 270px;
+	margin-bottom: 25px;
+}
+.a {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1.2em;
+	border-bottom: 1px solid #bbb;
+	text-align: center;
+	padding: 5px;
+	margin-left: 15px;
+	margin-right: 15px;
+	font-weight: 550;
+}
+.b {
+	height: 75px;
+	width: 220px;
+	background-color: #444;
+	color: white;
+	margin-left: 20px;
+	margin-top: 15px;
+	border: 5px;
+	border-style: double;
+	font-size: 1.6em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.c {
+	padding: 25px;
+}
+.d {
+	color: rgb(35, 116, 225);
+	font-weight: 600;
+	float: right;
+	margin-right: 20px;
+}
+#info {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.pozaInfo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 200px;
+	width: 550px;
+	margin-top: 25px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+}
+.poza200 {
+	height: 160px;
+	width: 200px;
+	background-color: #444;
+	color: white;
+	border: 5px;
+	border-style: double;
+	font-size: 1.2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.informatie {
+	width: 350px;
+}
+.e {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1.2em;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+	padding: 5px;
+	margin-left: 15px;
+
+	font-weight: 550;
+}
+.f {
+	padding: 25px;
+}
+.g {
+	color: rgb(35, 116, 225);
+	font-weight: 600;
+	float: right;
+	margin-right: 20px;
+}
+.categories {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	flex-direction: column;
+	/* background-color: #aaa; */
+	height: 200px;
+	width: 300px;
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+.h {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1.2em;
+	border-bottom: 2px dashed #ccc;
+	color: #ccc;
+	padding: 5px;
+	font-weight: 550;
+	width: 300px;
+}
+.categories a {
+	color: rgb(35, 116, 225);
+	border-bottom: 1px solid #ccc;
+	width: 300px;
+}
+.navBot {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 10px;
+}
+.navBot div {
+	height: 100px;
+	width: 160px;
+	background-color: #444;
+	color: white;
+	border: 5px;
+	border-style: double;
+	font-size: 1.2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.final {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(35, 116, 225);
+	color: White;
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 50px;
+	margin-top: 20px;
+}
+.final div {
+	font-size: 0.9em;
+	padding: 10px;
+}
