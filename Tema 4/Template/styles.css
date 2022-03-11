@@ -208,6 +208,7 @@ img {
 	width: 300px;
 	margin-top: 25px;
 	margin-bottom: 20px;
+	background-color: #eee;
 }
 .h {
 	font-family: "Times New Roman", Times, serif;
@@ -216,7 +217,7 @@ img {
 	color: #ccc;
 	padding: 5px;
 	font-weight: 550;
-	width: 300px;
+	width: 290px;
 }
 .categories a {
 	color: rgb(35, 116, 225);
