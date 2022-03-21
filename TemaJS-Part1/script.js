@@ -65,7 +65,7 @@ console.log(prim(7));
 console.log(prim(8));
 
 console.log("------------Exercitiul 7-----------");
-function sumaPrim(a) {
+function sumaPrime(a) {
 	let sum = 0;
 	let counter = 0;
 	let nr = 0;
@@ -78,9 +78,9 @@ function sumaPrim(a) {
 	}
 	return sum;
 }
-console.log(sumaPrim(4));
-console.log(sumaPrim(5));
-console.log(sumaPrim(7));
+console.log(sumaPrime(4));
+console.log(sumaPrime(5));
+console.log(sumaPrime(7));
 
 console.log("------------Exercitiul 8-----------");
 function invers(a) {
@@ -134,10 +134,12 @@ console.log(contains(arr, 10));
 console.log("------------Exercitiul 11----------");
 const arr2 = [1, 2, "3", 4, "5"];
 const arr3 = [1, 2, "3", 4, "5", 6];
+const arrN = [-1, -2, -3];
+const arrS = ["aas", "asa", "bbb", "bbbb"];
 function maxArray(arr) {
-	let max = 0;
+	let max = arr[0];
 	for (let i = 0; i < arr.length; i++) {
-		if (Number(max) < Number(arr[i])) {
+		if (max < arr[i]) {
 			max = arr[i];
 		}
 	}
@@ -145,12 +147,14 @@ function maxArray(arr) {
 }
 console.log(maxArray(arr2));
 console.log(maxArray(arr3));
+console.log(maxArray(arrS));
+console.log(maxArray(arrN));
 
 console.log("------------Exercitiul 12----------");
 const arr4 = [1, 2, 3, 4, 41];
 function sumMinMax(arr) {
 	let min = arr[0];
-	let max = 0;
+	let max = arr[0];
 	for (let i = 0; i < arr.length; i++) {
 		if (min > arr[i]) {
 			min = arr[i];
@@ -162,6 +166,7 @@ function sumMinMax(arr) {
 	return max + min;
 }
 console.log(sumMinMax(arr4));
+console.log(sumMinMax(arrN));
 
 console.log("------------Exercitiul 13----------");
 const arr5 = [1, 2, 2, 4, 41];
