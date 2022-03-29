@@ -1,6 +1,7 @@
 "use strict";
 
 console.log("------------Exercitiul 1-----------");
+/**O functie "equals" care primeste 2 parametrii si returneaza daca cei 2 parametrii sunt egali, strict */
 function equals(a, b) {
 	if (a === b) {
 		return true;
@@ -10,6 +11,7 @@ console.log(equals(2, 4));
 console.log(equals(4, 4));
 
 console.log("------------Exercitiul 2-----------");
+/**O functie "compare" care primeste 2 parametrii si returneaza -1 daca primul e mai mic ca al doilea, 0 daca sunt egale si 1 daca primul e mai mare ca al doilea */
 function compare(a, b) {
 	if (a < b) {
 		return -1;
@@ -22,6 +24,7 @@ console.log(compare(4, 4));
 console.log(compare(6, 4));
 
 console.log("------------Exercitiul 3-----------");
+/**O functie "max" care primeste 2 parametrii si returneaza maximul dintre cele 2 */
 function max(a, b) {
 	if (a > b) {
 		return a;
@@ -31,6 +34,7 @@ console.log(max(2, 4));
 console.log(max(6, 3));
 
 console.log("------------Exercitiul 4-----------");
+/** O functie "min" care primeste 2 parametrii si returneaza minimul dintre cele 2*/
 function min(a, b) {
 	if (a < b) {
 		return a;
@@ -40,6 +44,7 @@ console.log(min(2, 4));
 console.log(min(6, 3));
 
 console.log("------------Exercitiul 5-----------");
+/**O functie "suma" care primeste 1 parametru, numar intreg si returneaza suma primelor N numere naturale pozitive (exemplu: daca N este 3, trebuie sa returneze 6) */
 function suma(a) {
 	return (a * (a + 1)) / 2;
 }
@@ -48,6 +53,7 @@ console.log(suma(4));
 console.log(suma(5));
 
 console.log("------------Exercitiul 6-----------");
+/**O functie "prim" care primeste 1 parametru si returneaza true/false daca N este numar prim sau nu (restul impartirii la 1 si la N ==0) */
 function prim(a) {
 	let sum = 0;
 	for (let i = a; i > 0; i--) {
@@ -65,6 +71,7 @@ console.log(prim(7));
 console.log(prim(8));
 
 console.log("------------Exercitiul 7-----------");
+/**O functie "sumaPrime" care primeste 1 parametru si returneaza suma primelor N numere prime (pentru N=5 trebuie sa returneze 2+3+5+7+11=28) */
 function sumaPrime(a) {
 	let sum = 0;
 	let counter = 0;
@@ -83,6 +90,7 @@ console.log(sumaPrime(5));
 console.log(sumaPrime(7));
 
 console.log("------------Exercitiul 8-----------");
+/**O functie "invers" care primeste un parametru de tip numar si intoarce inversul acestuia (ca numar) (123 => 321) */
 function invers(a) {
 	let b = 0;
 	while (a) {
@@ -98,6 +106,7 @@ console.log(invers(987654321));
 console.log(invers(8654));
 
 console.log("------------Exercitiul 9-----------");
+/**O functie "produsImpare" care primeste 1 parametru si returneaza produsul primelor N numere impare pozitive (pentru N=5; returneaza 1*3*5*7*9=945) */
 function produsImpare(a) {
 	let produs = 1;
 	let counter = 0;
@@ -116,6 +125,7 @@ console.log(produsImpare(4));
 console.log(produsImpare(5));
 
 console.log("------------Exercitiul 10----------");
+/**O functie "contains" care primeste 2 parametri(arr - array de nr intregi si x - numar) si verifica daca x exista in array (rezultatul este true/false) */
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 function contains(arr, nr) {
 	let indicator = false;
@@ -132,6 +142,7 @@ console.log(contains(arr, 9));
 console.log(contains(arr, 10));
 
 console.log("------------Exercitiul 11----------");
+/**O functie "maxArray" care primeste un array si returneaza valoarea maxima (ar trebui sa functioneze si pentru numere si pentru stringuri) */
 const arr2 = [1, 2, "3", 4, "5"];
 const arr3 = [1, 2, "3", 4, "5", 6];
 const arrN = [-1, -2, -3];
@@ -151,6 +162,7 @@ console.log(maxArray(arrS));
 console.log(maxArray(arrN));
 
 console.log("------------Exercitiul 12----------");
+/**O functie "sumMinMax" care primeste un array de numere si returneaza suma dintre valoare maxima si valoare minima */
 const arr4 = [1, 2, 3, 4, 41];
 function sumMinMax(arr) {
 	let min = arr[0];
@@ -169,6 +181,7 @@ console.log(sumMinMax(arr4));
 console.log(sumMinMax(arrN));
 
 console.log("------------Exercitiul 13----------");
+/**O functie "hasDuplicates" care primeste un array si returneaza daca exista duplicate intr-un array primit ca parametru (true/false) */
 const arr5 = [1, 2, 2, 4, 41];
 const arr6 = [1, 2, 3, 4, 41];
 const arr7 = ["b", 2, "a", 4, 41];
@@ -189,6 +202,8 @@ console.log(hasDuplicates(arr7));
 console.log(hasDuplicates(arr8));
 
 console.log("------------Exercitiul 14----------");
+/**O functie "produsPozitive" care primeste un array si returneaza produsul numerelor pozitive intr-un array primit ca parametru
+ */
 const arr9 = [3, -4, 6, -8, -9, 5, 6, 2, 1, -4];
 function produsPozitive(arr) {
 	let produs = 1;
@@ -203,6 +218,7 @@ console.log(produsPozitive(arr9));
 console.log(produsPozitive(arr4));
 
 console.log("------------Exercitiul 15----------");
+/**O functie "palindrom" care primeste un string si returneaza daca este palindrom (inversul == originalul, ex: "1234321", "55", "787") (true/false) */
 const str1 = `123321`;
 const str2 = `123456`;
 function palindrom(a) {
