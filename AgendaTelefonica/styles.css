@@ -4,6 +4,7 @@
 .container {
 	display: flex;
 	justify-content: space-evenly;
+	align-items: flex-start;
 }
 .container-agenda {
 	border-top: 1px solid black;
@@ -23,4 +24,8 @@
 }
 .hidden {
 	display: none;
+}
+.error {
+	border-color: red;
+	color: red;
 }
