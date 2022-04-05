@@ -1,0 +1,26 @@
+* {
+	box-sizing: border-box;
+}
+.container {
+	display: flex;
+	justify-content: space-evenly;
+}
+.container-agenda {
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+.container-agenda button {
+	margin: 3px;
+}
+.contact {
+	border-bottom: 1px solid black;
+	padding: 0 20px 0 20px;
+}
+.container-input {
+	display: flex;
+	flex-direction: column;
+}
+.hidden {
+	display: none;
+}
