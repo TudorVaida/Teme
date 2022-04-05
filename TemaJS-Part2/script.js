@@ -65,8 +65,19 @@ console.log(getAllDigits(arr3));
 console.log("-------------Exercitiul 6------------");
 /**O functie "invertAllStrings" care primeste o lista de siruri de caractere si returneaza lista de siruri de caractere inversate
  */
-function invertAllStrings(str) {
-	return str.map((elem) => [...elem].reverse().join(""));
+function invertAllStrings(arr) {
+	let arrReverse = [];
+	for (let i = 0; i < arr.length; i++) {
+		let elem = [...arr[i]];
+		let reverse = [];
+		for (let y = elem.length - 1; y >= 0; y--) {
+			reverse.push(elem[y]);
+		}
+		arrReverse.push(reverse.join(""));
+	}
+	return arrReverse;
+
+	// return arr.map((elem) => [...elem].reverse().join(""));
 }
 console.log(invertAllStrings(arr3));
 console.log("-------------Exercitiul 7------------");
