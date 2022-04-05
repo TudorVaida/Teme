@@ -15,11 +15,22 @@ function getDigits(str) {
 console.log(getDigits(str));
 console.log("-------------Exercitiul 2------------");
 /** functie "getLetters" care primeste un sir de caractere si returneaza doar literele din sirul respectiv */
+function isOnlyLetters(str) {
+	const arr = [...str];
+	let indicator = true;
+	for (let i = 0; i < arr.length; i++) {
+		let y = arr[i].charCodeAt();
+		if (!((y >= 65 && y <= 90) || (y >= 97 && y <= 122))) {
+			indicator = false;
+		}
+	}
+	return indicator;
+}
 function getLetters(str) {
 	const arr = [...str];
 	let arr2 = [];
 	for (let i = 0; i < arr.length; i++) {
-		if (arr[i].match(/[a-zA-Z]+/g)) {
+		if (isOnlyLetters(arr[i])) {
 			arr2.push(arr[i]);
 		}
 	}
@@ -32,7 +43,7 @@ function getFirst5Letters(str) {
 	const arr = [...str];
 	let arr2 = [];
 	for (let i = 0; i < arr.length; i++) {
-		if (arr[i].match(/[a-zA-Z]+/g) && arr2.length < 5) {
+		if (isOnlyLetters(arr[i]) && arr2.length < 5) {
 			arr2.push(arr[i]);
 		}
 	}
