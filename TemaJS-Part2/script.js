@@ -140,9 +140,18 @@ console.log("-------------Exercitiul 11------------");
 /**O functie care verifica daca un numar este palindrom (ex: 121, 1234321) ("palindrom") */
 function palindrom(nr) {
 	nr = String(nr);
-	if (nr === [...nr].reverse().join("")) {
+	let nrStr = [...nr];
+	let arr = [];
+	for (let i = nrStr.length - 1; i >= 0; i--) {
+		arr.push(nrStr[i]);
+	}
+	if (nr === arr.join("")) {
 		return true;
 	} else return false;
+
+	// if (nr === [...nr].reverse().join("")) {
+	// 	return true;
+	// } else return false;
 }
 console.log(palindrom(123321));
 console.log(palindrom(123234254));
@@ -202,22 +211,25 @@ console.log(binarySearch(arr6, 8));
 
 console.log("-------------Exercitiul 15------------");
 /**O functie care implementeaza binary search pentru a verifica daca un numar se regaseste intr-un array. Dupa ce se termina executia functiei trebuie sa returnati de cate ori s-a apelat functia recursiv ("countBinarySearch") */
+
 function countBinarySearch(arr, nr) {
-	let start = 0;
-	let end = arr.length - 1;
 	let i = 0;
-	while (start <= end) {
-		i++;
-		let mid = start + Math.floor((end - start) / 2);
+	function binarySearchRecursive(arr, nr, start, end) {
+		if (start > end) return false;
+		let mid = Math.floor((start + end) / 2);
 		if (nr === arr[mid]) {
-			return i;
+			i++;
+			return true;
 		}
 		if (nr < arr[mid]) {
-			end = mid - 1;
+			i++;
+			return binarySearchRecursive(arr, nr, start, mid - 1);
 		} else {
-			start = mid + 1;
+			i++;
+			return binarySearchRecursive(arr, nr, mid + 1, end);
 		}
 	}
+	binarySearchRecursive(arr, nr, 0, arr.length - 1);
 	return i;
 }
 console.log(countBinarySearch(arr6, 3));
