@@ -1,5 +1,13 @@
+:root {
+	--light--grey: rgb(66, 72, 77);
+	--dark--grey: rgb(45, 52, 57);
+}
+
 * {
 	box-sizing: border-box;
+}
+body {
+	background-color: var(--dark--grey);
 }
 .container {
 	display: flex;
@@ -15,12 +23,16 @@
 	margin: 3px;
 }
 .contact {
-	border-bottom: 1px solid black;
+	/* border-bottom: 1px solid black; */
 	padding: 0 20px 0 20px;
+	background-color: var(--light--grey);
+	color: white;
+	border-radius: 8px;
 }
 .container-input {
 	display: flex;
 	flex-direction: column;
+	color: white;
 }
 .hidden {
 	display: none;
@@ -28,4 +40,22 @@
 .error {
 	border-color: red;
 	color: red;
+}
+.input {
+	border-radius: 18px;
+}
+.btn {
+	border-radius: 5px;
+}
+.btn--adauga {
+	background-color: rgb(0, 123, 255);
+}
+.btn--delete {
+	background-color: rgb(220, 53, 69);
+}
+.btn--edit {
+	background-color: rgb(255, 193, 7);
+}
+.btn--save {
+	background-color: rgb(40, 167, 69);
 }

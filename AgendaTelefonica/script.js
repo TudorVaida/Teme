@@ -19,8 +19,8 @@ function updateUI() {
             <div>${elem.nrTel}</div>
         
         
-        <button onclick="edit(${i})">Edit</button>
-        <button onclick="del(${i})">Delete</button>
+        <button class="btn--edit btn"  onclick="edit(${i})">Edit</button>
+        <button class="btn--delete btn"  onclick="del(${i})">Delete</button>
         </div>
     </div>`;
 		i++;
@@ -48,6 +48,7 @@ function del(idx) {
 }
 function checkAdd(name, nrTel) {
 	const inputs = document.querySelectorAll(".container-input input");
+	const span = document.querySelectorAll("span");
 
 	let arr = [...nrTel];
 	let indicator = true;
@@ -63,15 +64,19 @@ function checkAdd(name, nrTel) {
 		inputs.forEach((el) => {
 			el.classList.remove("error");
 		});
+		span.forEach((el) => el.classList.remove("error"));
 	} else {
 		inputs.forEach((el) => {
 			el.classList.add("error");
 		});
+		span.forEach((el) => el.classList.add("error"));
 	}
 }
 function checkSave(name, nrTel, idx) {
 	const inputNume = document.querySelector(`.input-nume${idx}`);
 	const inputNrtel = document.querySelector(`.input-nrTel${idx}`);
+	const span = document.querySelectorAll("span");
+
 	let arr = [...nrTel];
 	let indicator = true;
 	arr.forEach((el) => {
@@ -84,10 +89,12 @@ function checkSave(name, nrTel, idx) {
 		contacts.list[idx] = { nume: name, nrTel: nrTel };
 		inputNume.classList.remove("error");
 		inputNrtel.classList.remove("error");
+		span.forEach((el) => el.classList.remove("error"));
 		return true;
 	} else {
 		inputNume.classList.add("error");
 		inputNrtel.classList.add("error");
+		span.forEach((el) => el.classList.add("error"));
 		return false;
 	}
 }
@@ -99,7 +106,7 @@ function edit(idx) {
     <br>
     <input class="input-nrTel${idx}" type="text" value=${contacts.list[idx].nrTel} name="nrTel${idx}" />
     <br>
-    <button onclick="save(${idx})">Save</button>`;
+    <button class="btn--save btn"  onclick="save(${idx})">Save</button>`;
 	currentContact.insertAdjacentHTML("afterbegin", html);
 	currentCredentials.classList.add("hidden");
 	document.querySelector(`.input-nume${idx}`).focus();
