@@ -5,6 +5,7 @@ const contacts = {
 			nrTel: "0744452297",
 		},
 	],
+	stateGame: true,
 };
 
 function updateUI() {
@@ -27,8 +28,18 @@ function updateUI() {
 	}
 
 	containerAgenda.innerHTML = html;
+	contacts.stateGame = true;
 }
 updateUI();
+function enterSubmit(event, idx) {
+	if (event.keyCode === 13 && contacts.stateGame === true) {
+		addContact();
+	}
+	if (event.keyCode === 13 && contacts.stateGame === false) {
+		save(idx);
+	}
+}
+
 function addContact() {
 	const name = document.querySelector("[name = 'nume']");
 	const nrTel = document.querySelector("[name='nrTel']");
@@ -101,10 +112,11 @@ function checkSave(name, nrTel, idx) {
 function edit(idx) {
 	const currentContact = document.querySelector(`#contact${idx}`);
 	const currentCredentials = document.querySelector(`.contact${idx}`);
+	contacts.stateGame = false;
 	let html = `
-    <input class="input-nume${idx}" type="text" value=${contacts.list[idx].nume} name="nume${idx}" />
+    <input onkeypress="enterSubmit(event, ${idx})"  class="input-nume${idx}" type="text" value=${contacts.list[idx].nume} name="nume${idx}" />
     <br>
-    <input class="input-nrTel${idx}" type="text" value=${contacts.list[idx].nrTel} name="nrTel${idx}" />
+    <input onkeypress="enterSubmit(event, ${idx})" class="input-nrTel${idx}" type="text" value=${contacts.list[idx].nrTel} name="nrTel${idx}" />
     <br>
     <button class="btn--save btn"  onclick="save(${idx})">Save</button>`;
 	currentContact.insertAdjacentHTML("afterbegin", html);
