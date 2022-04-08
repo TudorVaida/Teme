@@ -6,6 +6,7 @@ const contacts = {
 		},
 	],
 	stateGame: true,
+	stateAdd: false,
 };
 
 function updateUI() {
@@ -28,9 +29,9 @@ function updateUI() {
 	}
 
 	containerAgenda.innerHTML = html;
+
 	contacts.stateGame = true;
 }
-updateUI();
 function enterSubmit(event, idx) {
 	if (event.keyCode === 13 && contacts.stateGame === true) {
 		addContact();
@@ -45,11 +46,12 @@ function addContact() {
 	const nrTel = document.querySelector("[name='nrTel']");
 
 	checkAdd(name.value, nrTel.value);
-
+	if (contacts.stateAdd) {
+		name.value = "";
+		nrTel.value = "";
+	}
 	updateUI();
-
-	name.value = "";
-	nrTel.value = "";
+	contacts.stateAdd = false;
 }
 function del(idx) {
 	if (confirm("Delete contact?")) {
@@ -71,7 +73,7 @@ function checkAdd(name, nrTel) {
 
 	if (indicator && arr.length === 10 && name !== "") {
 		contacts.list.push({ nume: name, nrTel: nrTel });
-
+		contacts.stateAdd = true;
 		inputs.forEach((el) => {
 			el.classList.remove("error");
 		});
