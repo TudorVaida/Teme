@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<script defer src="script.js"></script>
+		<title>Shopping List</title>
+	</head>
+	<body onload="updateUI()">
+		<div class="container">
+			<h2>SHOPPING LIST</h2>
+			<div class="form">
+				<input
+					onkeypress="addItemEnter(event)"
+					type="text"
+					placeholder="Item"
+				/>
+				<button onclick="addItem()" class="btn btn-addItem">Add Item</button>
+				<div>
+					<button onclick="sortAsc()" class="btn btnSort">Sort Asc</button>
+					<button onclick="sortDesc()" class="btn btnSort">Sort Desc</button>
+				</div>
+			</div>
+
+			<table id="list" style="width: 30%; margin-bottom: 20px">
+				<thead>
+					<tr>
+						<th style="width: 70%">Item description</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody id="table-body">
+					<!-- <tr>
+						<td></td>
+						<td>
+							<button class="btnMark btn">Mark as buyed</button>
+						</td>
+					</tr> -->
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
