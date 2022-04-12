@@ -1,7 +1,12 @@
 "use strict";
 
 const shop = {
-	list: ["Lapte"],
+	list: [
+		{
+			item: "Lapte",
+			marked: false,
+		},
+	],
 };
 
 function updateUI() {
@@ -10,7 +15,9 @@ function updateUI() {
 	for (let i = 0; i < shop.list.length; i++) {
 		str += `
     <tr>
-        <td class="item${i}" >${shop.list[i]}</td>
+        <td class="item${i} ${shop.list[i].marked ? "buyed" : ""} " >${
+			shop.list[i].item
+		}</td>
         <td>
         <button onclick="markAsBuyed(${i})" class="btnMark btn">Mark as buyed</button>
     </td>`;
@@ -30,7 +37,7 @@ function firstCapitalLeyter(str) {
 function addItem() {
 	const input = document.querySelector("input");
 	if (input.value !== "") {
-		shop.list.push(firstCapitalLeyter(input.value));
+		shop.list.push({ item: firstCapitalLeyter(input.value), marked: false });
 		input.value = "";
 		updateUI();
 	}
@@ -43,12 +50,28 @@ function addItemEnter(event) {
 function markAsBuyed(idx) {
 	const item = document.querySelector(`.item${idx}`);
 	item.classList.toggle("buyed");
+	shop.list[idx].marked = !shop.list[idx].marked;
 }
 function sortAsc() {
-	shop.list.sort();
+	shop.list.sort(function (a, b) {
+		if (a.item < b.item) {
+			return -1;
+		}
+		if (a.item > b.item) {
+			return 1;
+		}
+	});
+
 	updateUI();
 }
 function sortDesc() {
-	shop.list.sort().reverse();
+	shop.list.sort(function (a, b) {
+		if (a.item < b.item) {
+			return 1;
+		}
+		if (a.item > b.item) {
+			return -1;
+		}
+	});
 	updateUI();
 }

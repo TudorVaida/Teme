@@ -33,7 +33,7 @@ th {
 .btnMark {
 	max-height: 20px;
 	width: fit-content;
-	font-size: 9px;
+	font-size: 8px;
 	color: var(--almost--white);
 	background-color: red;
 }
