@@ -39,6 +39,7 @@ function addItem() {
 	if (input.value !== "") {
 		shop.list.push({ item: firstCapitalLeyter(input.value), marked: false });
 		input.value = "";
+		input.focus();
 		updateUI();
 	}
 }
