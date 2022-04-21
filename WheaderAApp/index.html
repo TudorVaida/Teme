@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Wheader App</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="nav">
+				<input
+					type="text"
+					placeholder="Intoduceti oras..."
+					class="input-oras"
+					name="inputCity"
+				/>
+				<input type="button" value="Afiseaza vremea" onclick="drawVreme()" />
+				<input
+					type="button"
+					value="Afiseaza prognoza"
+					onclick="drawPrognoza()"
+				/>
+			</div>
+			<div class="vremea-acum hidden">
+				<div class="title">
+					<h2>Vremea Acum</h2>
+				</div>
+				<div class="vremea-acum-info">
+					<!-- <div class="info"> -->
+					<!-- <img
+							src="images/soareCuNori.png"
+							alt=""
+							class="vremea-acum-info-img"
+						/> -->
+					<!-- <div>Descriere:</div>
+						<div>Umiditate:</div>
+						<div>Presiune:</div>
+						<div>Temperatura Curenta:</div>
+						<div>Minima zilei:</div>
+						<div>Maxima zilei:</div> -->
+					<!-- </div> -->
+					<div class="harta">
+						<iframe
+							width="600"
+							height="450"
+							style="border: 0"
+							loading="lazy"
+							allowfullscreen
+							referrerpolicy="no-referrer-when-downgrade"
+							src="https://www.google.com/maps/embed/v1/place?key=AIzaSyArGwBeUOFgbTUwzMQWy8vBEEZ7lrzyC_0
+						  &q=Space+Needle,Seattle+WA"
+						>
+						</iframe>
+					</div>
+				</div>
+			</div>
+			<div class="prognoza hidden">
+				<div class="title">
+					<h2>Vremea in urmatoarele zile</h2>
+				</div>
+				<div class="prognoza-info">
+					<div class="zi0 zi">
+						<h3></h3>
+						<!-- <div class="ora">
+							<img src="" alt="">
+							
+							<div>ora</div>
+							<div>descriere</div>
+							<div>Temp</div>
+						</div> -->
+					</div>
+					<div class="zi1 zi"></div>
+					<div class="zi2 zi"></div>
+					<div class="zi3 zi"></div>
+					<div class="zi4 zi"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
