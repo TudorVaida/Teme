@@ -27,6 +27,13 @@
 .nav :first-child {
 	width: 60%;
 }
+.button {
+	height: 100%;
+	background-color: rgb(30, 136, 229);
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
 .vremea-acum {
 	width: 100%;
 	height: fit-content;
