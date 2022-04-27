@@ -5,8 +5,21 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Wheader App</title>
+		<link rel="shortcut icon" href="#" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+			integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+			crossorigin=""
+		/>
+		<script
+			src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+			integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+			crossorigin=""
+		></script>
 		<link rel="stylesheet" href="styles.css" />
-		<script src="script.js"></script>
+
+		<script defer src="script.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -16,6 +29,7 @@
 					placeholder="Intoduceti oras..."
 					class="input-oras"
 					name="inputCity"
+					onkeypress="drawVremeEnter(event)"
 				/>
 				<input type="button" value="Afiseaza vremea" onclick="drawVreme()" />
 				<input
@@ -42,19 +56,7 @@
 						<div>Minima zilei:</div>
 						<div>Maxima zilei:</div> -->
 					<!-- </div> -->
-					<div class="harta">
-						<iframe
-							width="600"
-							height="450"
-							style="border: 0"
-							loading="lazy"
-							allowfullscreen
-							referrerpolicy="no-referrer-when-downgrade"
-							src="https://www.google.com/maps/embed/v1/place?key=AIzaSyArGwBeUOFgbTUwzMQWy8vBEEZ7lrzyC_0
-						  &q=Space+Needle,Seattle+WA"
-						>
-						</iframe>
-					</div>
+					<div id="map"></div>
 				</div>
 			</div>
 			<div class="prognoza hidden">

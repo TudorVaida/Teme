@@ -21,6 +21,8 @@ let prognozaZile = [
 	[],
 	[],
 ];
+let arrLuni31 = ["1", "3", "5", "7", "8", "10", "12"];
+let arrLuni30 = ["2", "4", "6", "9", "11"];
 let icon;
 let iconsForecast = [];
 function getCurrentCity() {
@@ -82,8 +84,27 @@ async function getDataForecast() {
 		}
 	}
 }
+function setMap(lat, lon) {
+	let map = L.map("map").setView([lat, lon], 13);
 
+	L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+		attribution:
+			'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	}).addTo(map);
+}
+function removeDivMap() {
+	const map = document.querySelector("#map");
+	if (map) {
+		map.remove();
+	}
+}
+function drawVremeEnter(event) {
+	if (event.key === "Enter") {
+		drawVreme();
+	}
+}
 async function drawVreme() {
+	removeDivMap();
 	getCurrentCity();
 	await getDataVreme();
 	const divVreme = document.querySelector(".vremea-acum");
@@ -99,28 +120,58 @@ async function drawVreme() {
     <div>Minima zilei: ${weatherData.main.temp_min}</div>
     <div>Maxima zilei: ${weatherData.main.temp_max}</div>
 	</div>
+	<div id="map"></div>
     `;
 	container.insertAdjacentHTML("afterbegin", html);
+	setMap(weatherData.coord.lat, weatherData.coord.lon);
 }
 function procesarePrognoza() {
 	let date = new Date().getDate();
 	let y = 0;
+
 	for (let i = 0; i < prognozaZile.length; i++) {
 		for (let elem of weatherForecast.list) {
-			if (elem.dt_txt.slice(8, 10) === String(date)) {
-				prognozaZile[i].push({
-					zi: `${elem.dt_txt.slice(8, 10)}/${elem.dt_txt.slice(
-						5,
-						7
-					)}/${elem.dt_txt.slice(0, 4)}`,
-					icon: elem.weather[0].icon,
-					ora: elem.dt_txt.slice(11, 16),
-					temperatura: elem.main.temp,
-					descriere: elem.weather[0].description,
-				});
+			if (date < 10) {
+				if (elem.dt_txt.slice(8, 10) === "0" + date) {
+					prognozaZile[i].push({
+						zi: `${elem.dt_txt.slice(8, 10)}/${elem.dt_txt.slice(
+							5,
+							7
+						)}/${elem.dt_txt.slice(0, 4)}`,
+						icon: elem.weather[0].icon,
+						ora: elem.dt_txt.slice(11, 16),
+						temperatura: elem.main.temp,
+						descriere: elem.weather[0].description,
+					});
+				}
+			} else {
+				if (elem.dt_txt.slice(8, 10) === String(date)) {
+					prognozaZile[i].push({
+						zi: `${elem.dt_txt.slice(8, 10)}/${elem.dt_txt.slice(
+							5,
+							7
+						)}/${elem.dt_txt.slice(0, 4)}`,
+						icon: elem.weather[0].icon,
+						ora: elem.dt_txt.slice(11, 16),
+						temperatura: elem.main.temp,
+						descriere: elem.weather[0].description,
+					});
+				}
 			}
 		}
 		date++;
+		if (
+			date === 32 &&
+			arrLuni31.includes(weatherForecast.list[0].dt_txt.slice(6, 7))
+		) {
+			date = 1;
+		}
+		if (
+			date === 31 &&
+			arrLuni30.includes(weatherForecast.list[0].dt_txt.slice(6, 7))
+		) {
+			date = 1;
+		}
 	}
 }
 
