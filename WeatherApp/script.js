@@ -3,7 +3,7 @@ let urlWeather =
 	"https://api.openweathermap.org/data/2.5/weather?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=";
 let urlForecast =
 	"https://api.openweathermap.org/data/2.5/forecast?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=";
-let urlIcon = "http://openweathermap.org/img/w/";
+let urlIcon = "https://openweathermap.org/img/w/";
 let currentCityName = "Paris";
 let weatherData = {};
 let weatherForecast = {};
